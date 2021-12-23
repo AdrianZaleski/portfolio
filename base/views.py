@@ -1,0 +1,16 @@
+from django.http.response import HttpResponse
+from django.shortcuts import render
+
+# Create your views here.
+
+def index(request):
+    return render(request, 'base/index.html')
+
+def posts(request):
+    return render(request, 'base/posts.html')
+
+def post(request):
+    return render(request, 'base/post.html')
+
+def profile(request):
+    return render(request, 'base/profile.html')

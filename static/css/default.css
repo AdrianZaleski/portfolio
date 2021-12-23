@@ -1,0 +1,66 @@
+:root{
+    --mainColor: 	#f1f0ea;
+    --secondaryColor: #fff;
+
+    --borderColor: #2f3234;
+
+    --mainText: black;
+    --secondaryText: #2f475a; 
+
+}
+
+
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, strong{
+    color: var(--mainText);
+    font-family: 'Roboto Mono', monospace;
+}
+
+p, li, span, label, input, textarea, a{
+    color: var(--secondaryText);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {font-size: 56px;}
+h2 {font-size: 36px;}
+h3 {font-size: 28px;}
+h4 {font-size: 24px;}
+h5 {font-size: 20px;}
+h6 {font-size: 16px;}
+
+a{
+    text-decoration: none;
+    color: #0250aa;
+}
+
+ul{
+    list-style: none;
+}
+
+.s1{
+    background-color: var(--mainColor);
+    border-bottom: 1px solid var(--borderColor);
+    overflow: auto;
+}
+
+.s2{
+    background-color: var(--secondaryColor);
+    border-bottom: 1px solid var(--borderColor);
+    overflow: auto;
+}
+
+.main-container{
+    width: 1500px;
+    margin: 0 auto;
+}
+
+/* making that screen is adjusting to the width of the frame - close to the mobiles */
+@media screen and (max-width: 1500px ) {
+    .main-container{
+        width: 95%;
+    }
+}
