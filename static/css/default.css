@@ -58,6 +58,89 @@ ul{
     margin: 0 auto;
 }
 
+.greeting-wrapper{
+    display: grid;
+    text-align: center;
+    align-content: center;
+    min-height: 10am;
+}
+
+.intro-wrapper{
+    background-color: var(--secondaryColor);
+    border: 1px solid var(--borderColor);
+    border-radius: 5px 5px 0 0;
+
+    -webkit-box-shadow: 11px 0px 46px -9px rgba(29, 43, 204, 1);
+    -moz-box-shadow: 11px 0px 46px -9px rgba(29, 43, 204, 1);
+    box-shadow: 11px 0px 46px -9px rgba(29, 43, 204, 1);
+
+    display: grid;
+    grid-template-rows: 3em 30em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        'nav-wrapper nav-wrapper'
+        'left-column right-column';
+}
+
+.nav-wrapper{
+    grid-area: nav-wrapper;
+    border-bottom: 1px solid var(--borderColor);
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--mainColor);
+}
+
+#navigation{
+    margin: 0;
+    padding: 10px;
+}
+
+#navigation li{
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.dots-wrapper{
+    display: flex;
+    padding: 10px;
+}
+
+#dot1{
+    background-color: #0250aa;
+}
+#dot2{
+    background-color: #005e17;
+}
+#dot3{
+    background-color: #aa0202;
+}
+
+.browser-dot{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin: 5px;
+
+    -webkit-box-shadow: 11px 0px 46px -9px rgba(29, 43, 204, 1);
+    -moz-box-shadow: 11px 0px 46px -9px rgba(29, 43, 204, 1);
+    box-shadow: 11px 0px 46px -9px rgba(29, 43, 204, 1);
+
+}
+
+
+.left-column{
+    grid-area: left-column;
+ 
+}
+
+.right-column{
+    grid-area: right-column;
+
+}
+
 /* making that screen is adjusting to the width of the frame - close to the mobiles */
 @media screen and (max-width: 1500px ) {
     .main-container{
