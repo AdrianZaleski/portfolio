@@ -4,6 +4,8 @@
 
     --borderColor: #2f3234;
     --themeDotBorder:#24292e;
+    --previewBg: rgb(251, 249, 243, 0.8);
+    --previewShadow: #f0ead6;
 
     --mainText: black;
     --secondaryText: #2f475a; 
@@ -74,8 +76,7 @@ ul{
     box-shadow: 11px 0px 46px -9px rgba(29, 43, 204, 1);
 
     display: grid;
-    grid-template-rows: 3em 30em;
-
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
         'nav-wrapper nav-wrapper'
         'left-column right-column';
@@ -138,6 +139,8 @@ ul{
 
 .left-column{
     grid-area: left-column;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #profile_pic{
@@ -194,12 +197,94 @@ ul{
 
 .right-column{
     grid-area: right-column;
+    display: grid;
+    align-content: center;
 
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#preview-shadow{
+    background-color: var(--previewShadow);
+    width: 300px;
+    height: 180px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+#preview{
+    width: 300px;
+    border: 1.5px solid var(--borderColor);
+    background-color: var(--previewBg);
+    padding: 15px;
+    position: relative;
+}
+
+.corner{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1.5px solid var(--borderColor);
+    background-color: black;
+    position: absolute;
+}
+
+#corner-tl{
+    top:-5px;
+    left: -5px;
+}
+
+#corner-tr{
+    top:-5px;
+    right: -5px;
+}
+
+#corner-bl{
+    bottom:-5px;
+    left: -5px;
+}
+
+#corner-br{
+    bottom:-5px;
+    right: -5px;
+}
+
+.about-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding-bottom: 50px;
+    padding-top: 50px;
+    gap:100px;
+}
+
+#skills-head{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#skills{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--previewShadow);
 }
 
 /* making that screen is adjusting to the width of the frame - close to the mobiles */
 @media screen and (max-width: 1500px ) {
     .main-container{
         width: 95%;
+    }
+}
+
+/* making that screen is adjusting to the width of the frame - close to the mobiles */
+@media screen and (max-width: 800px ) {
+    .intro-wrapper{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'nav-wrapper'
+            'left-column'
+            'right-column';
+    }
+    .right-column{
+        justify-content: center;
     }
 }
