@@ -9,12 +9,18 @@
 
     --mainText: black;
     --secondaryText: #2f475a;
+
+    --buttonColor: black;
 }
 
 html,
 body {
     padding: 0;
     margin: 0;
+}
+
+body * {
+    transition: 0.5s;
 }
 
 h1,
@@ -117,6 +123,10 @@ ul {
     background-color: var(--mainColor);
 }
 
+#navigation a {
+    color: var(--mainText);
+}
+
 #navigation {
     margin: 0;
     padding: 10px;
@@ -184,7 +194,7 @@ ul {
     border-radius: 50%;
 
     margin: 5px;
-    border: 2px solid var(--borderColor);
+    border: 2px solid var(--themeDotBorder);
 
     -webkit-box-shadow: 11px 0px 46px -9px rgba(29, 43, 204, 1);
     -moz-box-shadow: 11px 0px 46px -9px rgba(29, 43, 204, 1);
@@ -316,7 +326,7 @@ ul {
 }
 
 .post-preview {
-    background-color: #fff;
+    background-color: var(--mainColor);
 }
 
 .post-title {
@@ -335,6 +345,46 @@ ul {
 #post-link {
     margin-left: 14px;
     margin-bottom: 14px;
+}
+
+#contact-form {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid var(--borderColor);
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--mainColor);
+    margin-bottom: 50px;
+}
+
+#contact-form label {
+    line-height: 2.7em;
+}
+
+#contact-form textarea {
+    min-height: 150px;
+    font-size: 16px;
+}
+
+.input-field {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--secondaryColor);
+    border-radius: 5px;
+    border: 1px solid var(--borderColor);
+    font-size: 14px;
+}
+
+#submit-button {
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    background-color: var(--buttonColor);
+    border: none;
 }
 
 /* making that screen is adjusting to the width of the frame - close to the mobiles */
