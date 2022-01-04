@@ -1,7 +1,27 @@
 {% extends 'base/main.html' %}
+{% load static %}
 
+{% comment %} TODO: Add color switch as on main page, or just copy previous value here  {% endcomment %}
 {% block content %}
 
-<h1>Here are all the posts</h1>
+<div class="main-container">
+    <h1 align="center">Posts</h1>
+    <div class="post-wrapper">
+        {% for post in posts%}
+        <div>
+            <div class="post">
+                <img class="thumbnail" src="{% static 'images/Adrian.jpg' %}">
+                <div class="post-preview">
+                    <h6 class="post-title">{{post.headline}}</h6>
+                    <p class="post-intro">{{post.sub_headline}} </p>
+                    <a id="post-link" href="#">Read more</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+            <h3> No posts yet </h3>
+        {% endfor %}
 
+    </div>
+</div>
 {% endblock content %}

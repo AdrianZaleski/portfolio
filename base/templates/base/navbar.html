@@ -1,2 +1,12 @@
-<h1>Navbar placeholder (included in main file)</h1>
-<hr>
+<div class="nav-wrapper">
+    <a href="{% url 'home' %}">
+        <div class="dots-wrapper">
+            <div id="dot1" class="browser-dot"></div>
+            <div id="dot2" class="browser-dot"></div>
+            <div id="dot3" class="browser-dot"></div>
+        </div>
+    </a>
+    <ul id="navigation">
+        <li><a href="{% url 'home' %}#contact">Contact</a></li>
+    </ul>
+</div>

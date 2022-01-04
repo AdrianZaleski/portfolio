@@ -1,7 +1,16 @@
 {% extends 'base/main.html' %}
+{% load static %}
 
 {% block content %}
 
-<h1>Here is a post main page</h1>
+<div class="main-container">
+    <h1>Post Title</h1>
+
+    <img class="thumbnail" src="{% static 'images/Adrian.jpg' %} "
+
+    <p>
+        {% lorem 1 b random %}
+    </p>
+</div>
 
 {% endblock content %}
