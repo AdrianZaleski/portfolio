@@ -4,12 +4,13 @@
 {% block content %}
 
 <div class="main-container">
-    <h1>Post Title</h1>
+    <img class="thumbnail" src="{% static 'images/Adrian.jpg' %} ">
 
-    <img class="thumbnail" src="{% static 'images/Adrian.jpg' %} "
+    <h1>{{post.headline}}</h1>
+    <h4>{{post.sub_headline}} </h4>
 
     <p>
-        {% lorem 1 b random %}
+        {{post.body|linebreaks}}
     </p>
 </div>
 

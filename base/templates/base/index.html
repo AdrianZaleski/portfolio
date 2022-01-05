@@ -61,7 +61,7 @@
                     <div class="about-me">
                         <h3>
                             <a target="_blank" href="{% static 'resume.pdf' %}"
-                                >Donload resume</a
+                                >Download resume</a
                             >
                         </h3>
                         <h4>More about me</h4>
@@ -116,53 +116,25 @@
             <div class="main-container">
                 <h3 style="text-align: center">Portfolio</h3>
                 <div class="post-wrapper">
+                    {% for post in posts %}
                     <div>
                         <div class="post">
                             <img class="thumbnail" src="{% static 'images/Adrian.jpg' %}">
                             <div class="post-preview">
-                                <h6 class="post-title">To Do app</h6>
-                                <p class="post-intro">
-                                   
-                                </p>
-                                <a id="post-link" href="#">Read more</a>
+                                <h6 class="post-title">{{ post.headline }}</h6>
+                                <p class="post-intro">{{ post.sub_headline }}</p>
+                                <a id="post-link" href="{% url 'post' post.id %}">Read more</a>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail" src="{% static 'images/Adrian.jpg' %}">
-                            <div class="post-preview">
-                                <h6 class="post-title">Post Title</h6>
-                                <p class="post-intro">
-                                    Some text here. Need more text.Some text
-                                    here. Need more text.Some text here. Need
-                                    more text.Some text here. Need more
-                                    text.Some text here. Need more text.
-                                </p>
-                                <a id="post-link" href="#">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail" src="{% static 'images/Adrian.jpg' %}">
-                            <div class="post-preview">
-                                <h6 class="post-title">Post Title</h6>
-                                <p class="post-intro">
-                                    Some text here. Need more text.
-                                </p>
-                                <a id="post-link" href="#">Read more</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
-                <p align="center">
-                    <a href ="{% url 'posts'%}"> View More</a>
+                <p align="center"> 
+                    <a href="{% url 'posts' %}">View More</a>
                 </p>
-                
             </div>
         </section>
-
+               
         <section class="s2">
             <div class="main-container">
                 <h3 style="text-align: center">Get In Touch</h3>

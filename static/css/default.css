@@ -8,7 +8,8 @@
     --previewShadow: #f0ead6;
 
     --mainText: black;
-    --secondaryText: #2f475a;
+    --secondaryText: #0b1941;
+    --linkText: #033592;
 
     --buttonColor: black;
 }
@@ -39,8 +40,7 @@ li,
 span,
 label,
 input,
-textarea,
-a {
+textarea {
     color: var(--secondaryText);
     font-family: "Josefin Sans", sans-serif;
 }
@@ -66,7 +66,9 @@ h6 {
 
 a {
     text-decoration: none;
-    color: #0250aa;
+    font-style: italic;
+    color: var(--linkText);
+    font-family: "Josefin Sans", sans-serif;
 }
 
 ul {
@@ -345,6 +347,16 @@ ul {
 #post-link {
     margin-left: 14px;
     margin-bottom: 14px;
+}
+
+.tag {
+    display: inline-block;
+    color: #fff;
+    background-color: #888;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 3px 5px;
+    font-size: 12px;
 }
 
 #contact-form {

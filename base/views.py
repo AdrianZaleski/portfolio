@@ -1,34 +1,27 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
 
+from .models import Post
+
 # Create your views here.
 
 def home(request):
-    return render(request, 'base/index.html')
+    posts = Post.objects.filter(active = True, featured = True)[0:3]
+    
+    context = {'posts': posts}
+    return render(request, 'base/index.html', context)
 
 def posts(request):
+    posts = Post.objects.filter(active = True)
     
-    posts= [
-        {
-            'headline': 'To Do app',
-            'sub_headline': ' First app made. Simple to do app.',
-        },
-        
-        {
-            'headline': 'Coś tam coś tam',
-            'sub_headline': 'Some text here. Need more text.Some text here. Need more text.Some text here. Need more text.Some text here. Need more text.Some text here. Need more text.',
-        },
-        
-        {
-            'headline': 'Need of Title',
-            'sub_headline': 'KOlejna partia tekstu tutaj',
-        },
-    ]
     context = {'posts': posts}
     return render(request, 'base/posts.html', context)
 
-def post(request):
-    return render(request, 'base/post.html')
+def post(request, pk):
+    post = Post.objects.get(id=pk)
+    
+    context = {'post': post}
+    return render(request, 'base/post.html', context)
 
 def profile(request):
     return render(request, 'base/profile.html')
