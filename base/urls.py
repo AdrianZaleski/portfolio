@@ -8,6 +8,7 @@ urlpatterns = [
     path('profile/', views.profile, name='proile'),        
     
     # CRUD URLS:
-    path('create_post/', views.create_post, name='create_post')
-    
+    path('create_post/', views.create_post, name='create_post'),
+    path('update_post/<str:pk>/', views.update_post, name='update_post'),
+    path('delete_post/<str:pk>/', views.delete_post, name='delete_post'),
 ]
