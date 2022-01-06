@@ -399,6 +399,23 @@ ul {
     border: none;
 }
 
+.form-container > div {
+    padding-bottom: 10px;
+}
+
+#div_id_tags > div {
+    max-height: 100px;
+    overflow-y: scroll;
+    border: 1px solid #888;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+.btn btn-primary {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 /* making that screen is adjusting to the width of the frame - close to the mobiles */
 @media screen and (max-width: 1500px) {
     .main-container {
