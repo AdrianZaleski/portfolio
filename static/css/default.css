@@ -83,7 +83,8 @@ a {
     font-family: "Josefin Sans", sans-serif;
 }
 
-ul {
+ul,
+li {
     list-style: none;
 }
 
@@ -427,6 +428,18 @@ ul {
 .btn btn-primary {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.page-item {
+    display: inline;
+    padding: 4px 5px 4px 5px;
+    border: 1px solid var(--borderColor);
+    font-size: 20px;
 }
 
 /* making that screen is adjusting to the width of the frame - close to the mobiles */

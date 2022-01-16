@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 from .forms import PostForm
@@ -19,6 +20,19 @@ def posts(request):
     my_filter = PostFilter(request.GET, queryset=posts)
     posts = my_filter.qs
     
+    page= request.GET.get('page')
+    
+    paginator = Paginator(posts,3)
+    
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+        
+        
+        
     context = {'posts': posts, 'my_filter':my_filter}
     return render(request, 'base/posts.html', context)
 
