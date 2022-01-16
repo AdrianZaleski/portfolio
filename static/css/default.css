@@ -39,10 +39,15 @@ p,
 li,
 span,
 label,
-input,
+input {
+    color: var(--secondaryText);
+    font-family: "Josefin Sans", sans-serif;
+}
+
 textarea {
     color: var(--secondaryText);
     font-family: "Josefin Sans", sans-serif;
+    background-color: var(--secondaryColor);
 }
 
 h1 {
@@ -90,6 +95,7 @@ ul {
 .main-container {
     width: 1500px;
     margin: 0 auto;
+    background-color: var(--secondaryColor);
 }
 
 .greeting-wrapper {

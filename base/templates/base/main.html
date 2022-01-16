@@ -14,16 +14,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+
+    <link id="theme-style" rel="stylesheet" type="text/css" href=" ">
     
 </head>
 
 <body>
     {% include 'base/navbar.html' %}
-
+    
     {% block content %}
 
         <!---- content goes here -->
     
     {% endblock content %}
+
+    {% comment %} Below is usage of js changes in other inharitance of main {% endcomment %}
+    <script type="text/javascript">
+        let static = "{% static 'css' %}"
+    </script>
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

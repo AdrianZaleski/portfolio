@@ -8,16 +8,17 @@
         object-fit: cover;
     }
 </style>
+<section class ="s1">
+    <div class="main-container">
+        <img class="thumbnail" src=" {{post.thumbnail.url }} ">
 
-<div class="main-container">
-    <img class="thumbnail" src=" {{post.thumbnail.url }} ">
+        <h1>{{post.headline}}</h1>
+        <h4>{{post.sub_headline}} </h4>
 
-    <h1>{{post.headline}}</h1>
-    <h4>{{post.sub_headline}} </h4>
-
-    <p>
-        {{post.body|linebreaks}}
-    </p>
-</div>
+        <p>
+            {{post.body|linebreaks}}
+        </p>
+    </div>
+</section>
 
 {% endblock content %}
