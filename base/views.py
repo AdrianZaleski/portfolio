@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 
 
 from .forms import PostForm
+from .filters import PostFilter
 from .models import Post
 
 # Create your views here.
@@ -15,8 +16,10 @@ def home(request):
 
 def posts(request):
     posts = Post.objects.filter(active = True)
+    my_filter = PostFilter(request.GET, queryset=posts)
+    posts = my_filter.qs
     
-    context = {'posts': posts}
+    context = {'posts': posts, 'my_filter':my_filter}
     return render(request, 'base/posts.html', context)
 
 def post(request, pk):
