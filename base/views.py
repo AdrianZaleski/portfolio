@@ -1,7 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from django.core.mail import EmailMessage
+from django.conf import settings
+from django.template.loader import render_to_string
 
 from .forms import PostForm
 from .filters import PostFilter
@@ -36,8 +39,8 @@ def posts(request):
     context = {'posts': posts, 'my_filter':my_filter}
     return render(request, 'base/posts.html', context)
 
-def post(request, pk):
-    post = Post.objects.get(id=pk)
+def post(request, slug):
+    post = Post.objects.get(slug=slug)
     
     context = {'post': post}
     return render(request, 'base/post.html', context)
@@ -62,8 +65,8 @@ def create_post(request):
     return render(request, 'base/post_form.html', context)
 
 @login_required(login_url = 'home')
-def update_post(request, pk):
-    post = Post.objects.get(id = pk)
+def update_post(request, slug):
+    post = Post.objects.get(slug=slug)
     form = PostForm(instance=post)
     
     if request.method == "POST":
@@ -76,8 +79,8 @@ def update_post(request, pk):
     return render(request, 'base/post_form.html', context)
 
 @login_required(login_url = 'home')
-def delete_post(request, pk):
-    post = Post.objects.get(id = pk)
+def delete_post(request, slug):
+    post = Post.objects.get(slug=slug)
     
     if request.method == "POST":
         post.delete()
@@ -85,3 +88,25 @@ def delete_post(request, pk):
         
     context = {'item': post}
     return render(request, 'base/delete.html', context)
+
+
+def send_email(request):
+    
+    if request.method == 'POST': 
+        template = render_to_string('base/email_template.html',{
+            'name': request.POST['name'],
+            'email': request.POST['email'],
+            'message': request.POST['message'],
+            
+        })
+        
+        email = EmailMessage(
+            request.POST['subject'],
+            template,
+            settings.EMAIL_HOST_USER,
+            ['adrian.adam.zaleski@gmail.com']
+        )
+        
+        email.fail_silentl=False
+        email.send()
+    return render(request, 'base/email_sent.html')

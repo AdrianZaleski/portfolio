@@ -1,0 +1,28 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<style type='text/css'>
+    #page-wrapper{
+        height:100%;
+        width:100;%
+        display:flex;
+        justyfy-content:center;
+        text-align: center;
+    }
+
+
+
+</style>
+
+
+<div id='page-wrapper'>
+    <div id="success-box" class="content-block">
+        <h1>Thanks for sending a massage!</h1>
+        <p>Your message was successfully sent. I will do my best to get back to you in nearest future :-) </p>
+        <a id="back-btn" class="btn btn-dark" href="{% url 'home' %}">BACK TO MAIN PAGE</a>
+    </div>
+</div>
+
+{% endblock content %}
+

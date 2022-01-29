@@ -26,7 +26,7 @@
         
         <form id="searchForm" method="GET">
             {{my_filter.form|crispy}}
-            <input class="btn btn-primary" type="submit" value="search">
+            <input id="submit-button" type="submit" value="search">
         </form>
 
         <div class="post-wrapper">
@@ -37,11 +37,11 @@
                     <div class="post-preview">
                         <h6 class="post-title">{{post.headline}}</h6>
                         <p class="post-intro">{{post.sub_headline}} </p>
-                        <a id="post-link" href="{% url 'post' post.id %}">Read more</a>
+                        <a id="post-link" href="{% url 'post' post.slug %}">Read more</a>
                         
                         {% if request.user.is_authenticated %}
-                        <a id="post-link" href="{% url 'update_post' post.id %}">Edit</a>
-                        <a id="post-link" href="{% url 'delete_post' post.id %}">Delete</a>
+                        <a id="post-link" href="{% url 'update_post' post.slug %}">Edit</a>
+                        <a id="post-link" href="{% url 'delete_post' post.slug %}">Delete</a>
                         {% endif %}
                         
                         <hr>
