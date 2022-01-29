@@ -51,6 +51,14 @@ textarea {
     background-color: var(--secondaryColor);
 }
 
+table {
+    color: var(--mainText);
+
+    background-color: var(--secondaryColor);
+    border: 1px solid var(--borderColor);
+    border-radius: 5px 5px 0 0;
+}
+
 .textinput {
     color: var(--secondaryText);
     font-family: "Josefin Sans", sans-serif;
